@@ -1,0 +1,20 @@
+
+    <div class="main">
+        <h1>Get Current Weather Information</h1>
+        <div class="row">
+            <input type="text" placeholder="Enter City name" [(ngModel)]="cityName">
+            <button (click)="getWeatherInfo()">Get Weather</button>
+        </div>
+        
+        <div *ngIf="currentWeather">
+            <h3>Current Weather in {{cityName}}</h3>
+            <div class="weatherInfomain">
+                <div class="weatherInfo">
+                    <span><b>Temprature:</b> {{currentWeather?.main.temp}} <sub>{{currentWeather?.weather[0].main}}</sub> </span> <br>
+                    <span><b>Feels Like:</b> {{currentWeather?.main.feels_like}} </span><br>
+                    <span><b>Humidity:</b> {{currentWeather?.main.humidity}}% </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
